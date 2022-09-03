@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link media="all" href="/styles/style.css" rel="stylesheet">
+
+    <title>viewwords</title>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="frameform">
+    <table class="content">
+        <tr>
+            <th>id</th>
+            <th>english</th>
+            <th>rus</th>
+        </tr>
+        <tr th:each="word:${words}">
+            <td th:text="${word.id}"/>
+            <td th:text="${word.engWord}"/>
+            <td th:text="${word.rusWord}"/>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

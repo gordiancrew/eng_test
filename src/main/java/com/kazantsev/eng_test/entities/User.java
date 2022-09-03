@@ -25,6 +25,10 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
 
+    @Transient
+    @OneToMany
+    private Set<Word> words;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return getRoles();

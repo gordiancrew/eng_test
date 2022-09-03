@@ -1,0 +1,10 @@
+<div th:fragment="header">
+    <img  th:src="@{styles/logo.jpg}"
+          width="100%" alt="lorem"/>
+    <ul class="menu-main">
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/}">правила</a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/quests}">квест</a></li>
+        <li sec:authorize="!isAuthenticated()"><a th:href="@{/quests}">вход</a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">выход</a></li>
+    </ul>
+</div>
