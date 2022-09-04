@@ -50,3 +50,59 @@ margin: 200 px;
 .menu-main a:hover {
     color: #feb386;
 }
+.frame {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    /*width: 500px;*/
+    width: 50%;
+    height: auto;
+    background: rgba(255, 245, 215, .5);
+}
+.frame form {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 300px;
+    margin: 0 auto;
+}
+.frame textarea{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #606060;
+    outline: none;
+    background: #F9F0DA;
+    color: black;
+}
+ .frame input {
+
+    font-family: 'Ubuntu Condensed', sans-serif;
+    width: 100%;
+   text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #606060;
+    outline: none;
+    background: #F9F0DA;
+    color: black;
+}
+ .frame button {
+    position: relative;
+border: 2px solid #606060;
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    background: #32CD32;
+    cursor: pointer;
+}

@@ -28,12 +28,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user").hasRole("USER")
                 .antMatchers("/viewwords").hasRole("USER")
                 .antMatchers("/").permitAll()
+                .antMatchers("/registration").permitAll()
                 .antMatchers("/creater").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 //Настройка для входа в систему
                 .formLogin()
-               // .loginPage("/login")
+                .loginPage("/login")
 
                 //Перенарпавление на главную страницу после успешного входа
                 .defaultSuccessUrl("/")
@@ -43,16 +44,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .logoutSuccessUrl("/");
     }
+
     //
     @Override
     public void configure(WebSecurity web) {
         web.ignoring()
                 .antMatchers(
-                        "/styles/**", "/fonts/**",
-                        "/images/**","/imgs/**");
+                        "/styles/**"
+                       );
     }
 
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
-    }}
+    }
+}
