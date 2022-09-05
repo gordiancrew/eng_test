@@ -35,7 +35,7 @@ public class WordController {
         word.setEngWord(engword);
         word.setRusWord(rusword);
         wordRepository.save(word);
-        return "viewwords";
+        return "redirect:/viewwords";
     }
 
 }
