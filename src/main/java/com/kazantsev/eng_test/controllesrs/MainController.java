@@ -2,10 +2,8 @@ package com.kazantsev.eng_test.controllesrs;
 
 import com.kazantsev.eng_test.entities.Role;
 import com.kazantsev.eng_test.entities.User;
-import com.kazantsev.eng_test.entities.Word;
 import com.kazantsev.eng_test.repos.RoleRepository;
 import com.kazantsev.eng_test.repos.UserRepository;
-import com.kazantsev.eng_test.repos.WordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +18,6 @@ public class MainController {
     private UserRepository userRepository;
     @Autowired
     private RoleRepository roleRepository;
-    @Autowired
-    private WordRepository wordRepository;
 
     @GetMapping("/")
     public String index() {
@@ -40,7 +36,8 @@ public class MainController {
 
     @GetMapping("/creater")
     public String creater() {
-
+        roleRepository.deleteAll();
+        userRepository.deleteAll();
         Role roleAdmin = new Role();
         roleAdmin.setId(1);
         roleAdmin.setName(ROLE_ADMIN);
@@ -60,16 +57,6 @@ public class MainController {
         admin.setRoles(Collections.singleton(roleAdmin));
         userRepository.save(user);
         userRepository.save(admin);
-        Word word = new Word();
-        word.setEngWord("dog");
-        word.setRusWord("собака");
-        word.setCountPass(0);
-        word.setUser(user);
-        wordRepository.save(word);
-        Word word2 = new Word();
-        word2.setEngWord("cat");
-        word2.setRusWord("кот");
-        wordRepository.save(word2);
         return "index";
     }
 }

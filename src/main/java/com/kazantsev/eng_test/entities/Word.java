@@ -14,8 +14,8 @@ public class Word {
     private String engWord;
     private String rusWord;
     private int countPass;
+
     @ManyToOne
     private User user;
-
 
 }
