@@ -34,13 +34,21 @@ public class GameController {
     @PostMapping("/game")
     public String gamePost(Model model, @RequestParam String answer, @RequestParam String id) {
         String result = WORD_MISTAKE;
+        int progressCountPass = -1;
         Word word = wordRepository.getById(Integer.parseInt(id));
+
         if (word.getRusWord().equals(answer)) {
             result = WORD_EQUALS;
+            progressCountPass = 1;
         }
-        model.addAttribute("answer",answer);
+        word.setCountPass(word.getCountPass() + progressCountPass);
+        model.addAttribute("answer", answer);
         model.addAttribute("result", result);
         model.addAttribute("word", word);
+        wordRepository.save(word);
+        if(word.getCountPass()==10){
+            wordRepository.delete(word);
+        }
         return "gameresult";
     }
 }

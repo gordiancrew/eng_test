@@ -34,6 +34,7 @@ public class WordController {
         Word word=new Word();
         word.setEngWord(engword);
         word.setRusWord(rusword);
+        word.setCountPass(0);
         wordRepository.save(word);
         return "redirect:/viewwords";
     }
