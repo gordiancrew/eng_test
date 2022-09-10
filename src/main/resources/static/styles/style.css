@@ -148,3 +148,17 @@ border: 2px solid #606060;
     background: #32CD32;
     cursor: pointer;
 }
+#game {
+font-family: 'Ubuntu Condensed', sans-serif;
+  position: relative;
+  border: 2px solid #606060;
+    width: 60%;
+
+    margin-top: 20px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    background: #32CD32;
+    cursor: pointer;
+}

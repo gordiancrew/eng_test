@@ -4,6 +4,7 @@
     <ul class="menu-main">
         <li sec:authorize="isAuthenticated()"><a th:href="@{/viewwords}">view words</a></li>
         <li sec:authorize="isAuthenticated()"><a th:href="@{/addword}">add word</a></li>
+        <li sec:authorize="isAuthenticated()"><a th:href="@{/game}">game</a></li>
         <li sec:authorize="!isAuthenticated()"><a th:href="@{/viewwords}">enter</a></li>
         <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">exit</a></li>
     </ul>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link media="all" href="/styles/style.css" rel="stylesheet">
+    <title>gameresult</title>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<form th:action="@{/game}" method="get">
+    <div class="content">
+        <h1 th:text="${result}"/>
+        <h3>Your answer:</h3>
+        <h2 th:text="${answer}"/>
+        <h3>Right answer</h3>
+        <h2 th:text="${word.rusWord}"/>
+
+        <button type="submit" >NEXT</button>
+
+    </div>
+</form>
+</body>
+</html>

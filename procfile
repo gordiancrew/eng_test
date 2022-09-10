@@ -1,0 +1,1 @@
+web: java -jar target/firj-1.0.jar
