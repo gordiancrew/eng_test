@@ -5,9 +5,11 @@ import com.kazantsev.eng_test.entities.User;
 import com.kazantsev.eng_test.repos.RoleRepository;
 import com.kazantsev.eng_test.repos.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.Collections;
 
 @Controller
@@ -25,7 +27,7 @@ public class MainController {
     }
 
     @GetMapping("/user")
-    public String user() {
+    public String user(HttpSession session) {
         return "user";
     }
 

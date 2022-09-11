@@ -8,32 +8,26 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-
 <div th:if="${info!=null}" class="error">
     <h1 th:text="${info}"></h1>
 </div>
 <div class="frame">
-
-        <form th:action="@{/addword}" method="post">
-
-            <label>Enter words</label>
-            <input type="text" name="engword" placeholder="english word" onchange="this.value=this.value.toLowerCase();"
-                   autofocus="true"
-                   maxlength="20"
-                   pattern="[a-zA-Z]{2,20}"
-                   required oninvalid="this.setCustomValidity('incorrect enter')"
-                   oninput="setCustomValidity('')"/>
-            <input type="text" name="rusword" placeholder="russhian word"
-                   onchange="this.value=this.value.toLowerCase();" autofocus="true"
-                   maxlength="20"
-                   pattern="[а-яА-Я]{2,20}"
-                   required oninvalid="this.setCustomValidity('incorrect enter')"
-                   oninput="setCustomValidity('')"/>
-
-            <button type="submit">enter word</button>
-        </form>
-
+    <form th:action="@{/addword}" method="post">
+        <label>Enter words</label>
+        <input type="text" name="engword" placeholder="english word" onchange="this.value=this.value.toLowerCase();"
+               autofocus="true"
+               maxlength="20"
+               pattern="[a-zA-Z]{2,20}"
+               required oninvalid="this.setCustomValidity('incorrect enter')"
+               oninput="setCustomValidity('')"/>
+        <input type="text" name="rusword" placeholder="russian word"
+               onchange="this.value=this.value.toLowerCase();" autofocus="true"
+               maxlength="20"
+               pattern="[а-яА-Я]{2,20}"
+               required oninvalid="this.setCustomValidity('incorrect enter')"
+               oninput="setCustomValidity('')"/>
+        <button type="submit">enter word</button>
+    </form>
 </div>
-
 </body>
 </html>

@@ -10,14 +10,13 @@
 <header th:insert="blocks/header :: header"></header>
 <form th:action="@{/game}" method="get">
     <div class="content">
+        <h1 th:text="${session.gamecount}"/>
         <h1 th:text="${result}"/>
         <h3>Your answer:</h3>
         <h2 th:text="${answer}"/>
         <h3>Right answer</h3>
         <h2 th:text="${word.rusWord}"/>
-
-        <button type="submit" >NEXT</button>
-
+        <button type="submit">NEXT</button>
     </div>
 </form>
 </body>
