@@ -16,13 +16,13 @@
         <label>Enter words</label>
         <input type="text" name="engword" placeholder="english word" onchange="this.value=this.value.toLowerCase();"
                autofocus="true"
-               maxlength="20"
+               maxlength="20" autocomplete="off"
                pattern="[a-zA-Z]{2,20}"
                required oninvalid="this.setCustomValidity('incorrect enter')"
                oninput="setCustomValidity('')"/>
         <input type="text" name="rusword" placeholder="russian word"
                onchange="this.value=this.value.toLowerCase();" autofocus="true"
-               maxlength="20"
+               maxlength="20" autocomplete="off"
                pattern="[а-яА-Я]{2,20}"
                required oninvalid="this.setCustomValidity('incorrect enter')"
                oninput="setCustomValidity('')"/>

@@ -1,6 +1,6 @@
 <div th:fragment="header">
-    <img  th:src="@{styles/logo.jpg}"
-          width="100%" alt="lorem"/>
+<!--    <img  th:src="@{styles/logo.jpg}"-->
+<!--          width="100%" alt="lorem"/>-->
     <ul class="menu-main">
         <li sec:authorize="isAuthenticated()"><a th:href="@{/viewwords}">view words</a></li>
         <li sec:authorize="isAuthenticated()"><a th:href="@{/addword}">add word</a></li>

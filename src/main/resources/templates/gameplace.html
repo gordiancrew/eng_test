@@ -8,12 +8,14 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<h1 th:text="${session.gamecount}"/>
+<div class="content">
+    <h1 th:text="${'point='+session.gamecount+' step='+session.gamestep}"/>
+</div>
 <form th:action="@{/game}" method="post">
     <div class="content">
         <h1 th:text="${word.engWord}"/>
         <input type="text" name="answer" placeholder="answer" onchange="this.value=this.value.toLowerCase();"
-               autofocus="true"/>
+               autofocus="true" autocomplete="off"/>
         <button type="submit" id="game" name="id" th:value="${word.id}">ОТВЕТИТЬ</button>
     </div>
 </form>

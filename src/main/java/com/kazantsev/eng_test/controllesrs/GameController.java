@@ -17,8 +17,8 @@ import java.util.List;
 
 @Controller
 public class GameController {
-    private String WORD_EQUALS = "GOOOOOOOOD JOB";
-    private String WORD_MISTAKE = "BAD";
+    private String WORD_EQUALS = "GOOOOOOOOD JOB!!!";
+    private String WORD_MISTAKE = "BAD (:";
     @Autowired
     private WordRepository wordRepository;
     @Autowired
@@ -28,6 +28,9 @@ public class GameController {
     public String gameplace(Model model, HttpSession session) {
         if (session.getAttribute("gamecount") == null) {
             session.setAttribute("gamecount", 0);
+        }
+        if (session.getAttribute("gamestep") == null) {
+            session.setAttribute("gamestep", 0);
         }
         String username;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -55,7 +58,9 @@ public class GameController {
             progressCountPass = 1;
         }
         int newGameCount = (int) session.getAttribute("gamecount") + progressCountPass;
+        int newGamestep=(int) session.getAttribute("gamestep")+1;
         session.setAttribute("gamecount", newGameCount);
+        session.setAttribute("gamestep",newGamestep);
         word.setCountPass(word.getCountPass() + progressCountPass);
         model.addAttribute("answer", answer);
         model.addAttribute("result", result);
